@@ -1,0 +1,127 @@
+.container-achievements {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    background-image: linear-gradient(to left, #ff2600, #de9386);
+}
+
+.achievements {
+    width: 62%;
+    padding: 20px;
+    height: 100%;
+    background-color: #fff; 
+    overflow: auto;
+    margin-top: 40px;
+    margin-left: 30px;
+}
+
+.achievement-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border: 1px solid #b0b0b0;
+    padding: 3px;
+    margin-top: 5px;
+}
+
+.nickname {
+    width: 30%;
+    color: #fff;
+    padding: 20px;
+}
+
+.level {
+    text-align: right; 
+    padding-top: 10px; 
+    padding-bottom: 10px; 
+    color: white;
+}
+
+.container{
+    max-width: 1100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+.container .box{
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 60px;
+    border-radius: 5px;
+}
+.container .box .image{
+    margin: 10px 0;
+    height: 150px;
+    width: 150px;
+    background: #FF6347;
+    padding: 3px;
+    border-radius: 50%;
+}
+.box .image img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+}
+.box p{
+    text-align: justify;
+    margin-top: 8px;
+    font-size: 16px;
+    font-weight: 400;
+}
+.box .name_job{
+    margin: 10px 0 3px 0;
+    color: #FF6347;
+    font-size: 18px;
+    font-weight: 600;
+}
+.rating i{
+    font-size: 18px;
+    color: #FF6347;
+    margin-bottom: 5px;
+}
+.btns button {
+    background: #FF6347;
+    padding: 9px 20px; /* Prilagodite širinu i visinu prema potrebi */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+    transition: background 0.3s linear;
+    margin-top: 20px;
+}
+
+.btns button:hover {
+    background: #FF4500; /* Promenite nijansu boje na hover */
+}
+
+
+.btns button:first-child:hover {
+    background: #808080;
+}
+
+.ach1 {
+    width: 30px;
+    height: 30px; 
+    background-image: url('../images/trophy.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 5px;
+}
+
+.progress-bar{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+
+

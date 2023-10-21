@@ -1,0 +1,44 @@
+.flex {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    text-align: left;
+    margin-bottom: 2em;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.rank,
+.name,
+.points {
+    flex: 1;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .rank {
+    font-weight: bold;
+  }
+  
+  .first {
+      background-color: #f1e082;
+      
+    }
+    
+    .second {
+        background-color:  #dedede; 
+    }
+    
+    .third {
+        background-color: #dba671;
+    }
+    
+    img {
+    width: 20%;
+    border-radius: 50%;
+  }
+  
+  .text-dark {
+    color: var(--color-dark);
+  }
+  
