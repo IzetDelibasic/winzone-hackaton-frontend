@@ -1,34 +1,62 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom'; 
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
 import './Login.css';
 
 export const Login = () => {
-  const [login, setLogin] = useState(true); 
-  const history = useNavigate();
+  const [login, setLogin] = useState(false);
+  const navigate = useNavigate(); 
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e, type) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
+    const auth = getAuth(); 
 
+    if (type === "signup") {
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((data) => {
+          console.log(data, "authData");
+          navigate("/Achievements"); 
+        })
+        .catch((err) => {
+          alert("Greska prilikom registrovanja / logiranja !");
+          setLogin(true);
+        });
+    } else {
+      signInWithEmailAndPassword(auth, email, password)
+        .then((data) => {
+          console.log(data, "authData");
+          navigate("/Achievements"); 
+        })
+        .catch((err) => {
+          alert("Greska prilikom registrovanja / logiranja !");
+        });
+    }
   };
 
   return (
     <div className='login' id='login'>
-      <h1>Login</h1>
-      <hr />
-      <form onSubmit={handleSubmit}>
-        <div className="inputBox">
-          <input name='name' placeholder='Nickname' />
+      <div className='row'>
+        <div
+          className={login === false ? "activeColor" : "pointer"}
+          onClick={() => setLogin(false)}
+        >
+          Register
         </div>
-        <div className="inputBox">
-          <input name='password' placeholder='Password' type='password' />
+        <div
+          className={login === true ? "activeColor" : "pointer"}
+          onClick={() => setLogin(true)}
+        >
+          Login
         </div>
-        <Link to="/Achievements"> 
-          <button className='reglog' name='reglog'>Login</button>    
-        </Link>
+      </div>
+      <h1>{login ? "Login" : "Register"}</h1>
+      <form onSubmit={(e) => handleSubmit(e, login ? 'signin' : 'signup')}>
+        <input name='email' placeholder='Email' /><br />
+        <input name='password' placeholder='Password' type='password' /><br /><br />
+        <button name='reglog'>{login ? "Login" : "Register"}</button>
       </form>
     </div>
   );
-};
+}

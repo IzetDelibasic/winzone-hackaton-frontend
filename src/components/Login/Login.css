@@ -48,7 +48,7 @@ form{
   align-items: center;
   flex-direction: row;
   gap: 25px;
-  padding: 20px;
+  padding: 10px;
 }
 
 .login hr {
@@ -116,3 +116,4 @@ form{
 .reglog:hover {
   background: #606060;
 }
+
