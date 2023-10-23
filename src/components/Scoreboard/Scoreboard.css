@@ -22,10 +22,7 @@
     background-clip: text;
     -webkit-background-clip: text;
     margin: auto;
-  }
-  
-  
-  
+}
 
 #profile{
     margin: auto;
@@ -56,6 +53,7 @@
 #profile .flex img{
     width: 20%;
     border-radius: 50%;
+    display: none;
 }
 
 #profile .flex .info{
@@ -70,3 +68,4 @@
     color: var(--color-orange);
 
 }
+

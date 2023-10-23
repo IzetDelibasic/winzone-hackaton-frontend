@@ -1,31 +1,46 @@
 .container-achievements {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     width: 100%;
-    background-image: linear-gradient(to left, #ff2600, #de9386);
+    justify-content: space-between;
+    
 }
 
 .achievements {
-    width: 62%;
+    width: 75%;
     padding: 20px;
     height: 100%;
-    background-color: #fff; 
+    background-color: #ffffff;
     overflow: auto;
     margin-top: 40px;
     margin-left: 30px;
+    border-radius: 20px;
+}
+
+.achievements h2{
+    font-size: 40px;
+    font-weight: 600;
+    background-image: linear-gradient(to left, #808080, #000000);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    margin: auto;
+    text-align: center;
 }
 
 .achievement-details{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    border: 1px solid #b0b0b0;
-    padding: 3px;
+    border: 1px solid #161616;
+    padding: 6px;
     margin-top: 5px;
+    background-image: linear-gradient(to left, #808080, #000000);
+    border-radius: 10px;
 }
 
 .nickname {
-    width: 30%;
+    width: 20%;
     color: #fff;
     padding: 20px;
 }
@@ -40,34 +55,36 @@
 .container{
     max-width: 1100px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     padding: 20px;
 }
 .container .box{
-    background: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 50px 60px;
-    border-radius: 5px;
+    border-radius: 20px;
+    background-color: #fff;
+    width: 100%;
 }
 .container .box .image{
     margin: 10px 0;
     height: 150px;
     width: 150px;
-    background: #FF6347;
+    border: 1px solid black;
     padding: 3px;
     border-radius: 50%;
+    background-image: url('../images/icon-avatar.png');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .box .image img{
     height: 100%;
     width: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #fff;
+    background-size: cover;
 }
 .box p{
     text-align: justify;
@@ -86,9 +103,16 @@
     color: #FF6347;
     margin-bottom: 5px;
 }
+.btns{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
 .btns button {
     background: #FF6347;
-    padding: 9px 20px; /* Prilagodite širinu i visinu prema potrebi */
+    padding: 9px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -96,11 +120,14 @@
     font-weight: 400;
     color: #fff;
     transition: background 0.3s linear;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
 }
 
 .btns button:hover {
-    background: #FF4500; /* Promenite nijansu boje na hover */
+    background: #FF4500; 
 }
 
 
@@ -109,19 +136,189 @@
 }
 
 .ach1 {
-    width: 30px;
-    height: 30px; 
-    background-image: url('../images/trophy.png'); 
+    width: 40px;
+    height: 40px; 
+    background-image: url('../images/Asset\ 5@2x.png'); 
     background-size: contain;
     background-repeat: no-repeat;
     margin-top: 5px;
 }
 
-.progress-bar{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+.ach2 {
+    width: 40px;
+    height: 40px; 
+    background-image: url('../images/Asset\ 17@2x.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 5px;
+}
+
+.ach3 {
+    width: 40px;
+    height: 40px; 
+    background-image: url('../images/Asset\ 10@2x.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 5px;
 }
 
 
 
+.progress-bar{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    color: white;
+}
+
+.achievement-badge {
+    background-color: #cecdcd; 
+    padding: 10px;
+}
+
+.achievement-badge p {
+    color: #fff; 
+    margin: 0;
+    font-weight: bold;
+}
+
+.achievement h3{
+    width: 150px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.my-achievements ul{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    transition: all 0.5s;
+  }
+
+  .btns hr {
+    border: 3px solid #FF6347;
+    width: 70%;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+button {
+    background-color:  #FF6347;
+    color: #fff; 
+    padding: 10px 20px;
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-weight: bold;
+    height: 45px;
+    transition: background 0.3s linear;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  
+  button:disabled {
+    background-color: #8e8e8e;
+    cursor: not-allowed; 
+  }
+  
+  button:hover {
+    background-color: #70604f; 
+  }
+  .my-achievements ul li {
+    transition: transform 0.5s;
+    animation: badgeAppear 0.5s ease forwards;
+  }
+
+  
+  @keyframes badgeAppear {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .my-achievements hr {
+    border: 3px solid #FF6347;
+    width: 55%;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .skill {
+    float: left;
+    width: 1200px;
+    background-color: #fff;
+    margin-left: 40px;
+    margin-top: 20px;
+    padding-bottom: 30px;
+    overflow: auto;
+  }
+  
+  .jenengskill {
+    font-size: 14px;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    margin-left: 10px;
+    color: #afafaf;
+    text-align: center;
+  }
+  
+  .skill-bar{
+    width: 1000px;
+    margin-left: 10px;
+    background-color: #ebebeb;
+    height: 10px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .htmlcss{
+    width: 60%;
+    height: 10px;
+    background-color: #FF6347;
+    position: relative;
+    z-index: 10;
+  }
+  
+
+  
+  .bunder1 span{
+    font-size:13px;
+    position:absolute;
+    margin-top:6px;
+    margin-left:3px;
+  }
+  
+  .bunder1{
+    background-color:#FF6347;
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    position:absolute;
+    margin-top:-10px;
+  }
+  
+  .bunder1 span{
+    font-size:13px;
+    position:absolute;
+    margin-top:6px;
+    margin-left:7px;
+  }
+
+
+  
+  
+  
+  

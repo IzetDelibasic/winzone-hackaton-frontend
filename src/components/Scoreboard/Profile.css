@@ -4,8 +4,11 @@
     gap: 1em;
     text-align: left;
     margin-bottom: 2em;
-    padding: 10px;
+    padding: 15px;
     border-radius: 15px;
+    width: 500px;
+    height: 50px;
+    background-color: rgba(161, 161, 161, 0.323);
 }
 
 .rank,
@@ -22,7 +25,6 @@
   
   .first {
       background-color: #f1e082;
-      
     }
     
     .second {
@@ -31,6 +33,7 @@
     
     .third {
         background-color: #dba671;
+      
     }
     
     img {
